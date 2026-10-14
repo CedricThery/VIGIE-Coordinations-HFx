@@ -1,0 +1,41 @@
+import {
+  Calendar,
+  AlertTriangle,
+  Factory
+} from "lucide-react";
+
+export default function Sidebar() {
+
+  return (
+
+    <div className="w-64 h-screen bg-slate-900 text-white">
+
+      <h1 className="text-xl p-4 font-bold">
+        VIGIE HF
+      </h1>
+
+      <nav className="flex flex-col gap-4 p-4">
+
+        <a href="/">
+          Dashboard
+        </a>
+
+        <a href="/planning">
+          Planning
+        </a>
+
+        <a href="/cartographie">
+          Cartographie
+        </a>
+
+        <a href="/alertes">
+          Alertes
+        </a>
+
+      </nav>
+
+    </div>
+
+  );
+
+}

@@ -1,0 +1,89 @@
+import { useState } from "react";
+
+export default function ZoneCard({
+
+  zone
+
+}) {
+
+  const [etat, setEtat] =
+    useState("VERT");
+
+  const couleurs = {
+
+    VERT:
+      "bg-green-100 border-green-500",
+
+    JAUNE:
+      "bg-yellow-100 border-yellow-500",
+
+    ORANGE:
+      "bg-orange-100 border-orange-500",
+
+    ROUGE:
+      "bg-red-100 border-red-500"
+
+  };
+
+  return (
+
+    <div
+      className={`
+      border-2
+      rounded-xl
+      p-4
+      ${couleurs[etat]}
+      `}
+    >
+
+      <h3
+        className="font-bold text-xl"
+      >
+        {zone.nom}
+      </h3>
+
+      <p>
+        {zone.secteur}
+      </p>
+
+      <div className="mt-3 flex gap-2 flex-wrap">
+
+        <button
+          onClick={() =>
+            setEtat("VERT")
+          }
+        >
+          🟢 Libre
+        </button>
+
+        <button
+          onClick={() =>
+            setEtat("JAUNE")
+          }
+        >
+          🟡 Conditions
+        </button>
+
+        <button
+          onClick={() =>
+            setEtat("ORANGE")
+          }
+        >
+          🟠 Forte Coactivité
+        </button>
+
+        <button
+          onClick={() =>
+            setEtat("ROUGE")
+          }
+        >
+          🔴 Interdit
+        </button>
+
+      </div>
+
+    </div>
+
+  );
+
+}

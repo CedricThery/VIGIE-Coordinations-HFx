@@ -1,0 +1,139 @@
+import {
+  buildDailyMatrix
+}
+from "../services/coactivityEngine";
+
+import {
+  calculateRisk
+}
+from "../services/riskEngine";
+
+export default function DailyCoactivityTable({
+
+  interventions
+
+}) {
+
+  const matrix =
+    buildDailyMatrix(
+      interventions
+    );
+
+  return (
+
+    <div className="bg-white p-4 rounded-xl shadow">
+
+      <h2 className="text-xl font-bold mb-4">
+
+        Charge journalière
+
+      </h2>
+
+      <table className="w-full">
+
+        <thead>
+
+          <tr>
+
+            <th>Date</th>
+
+            <th>
+              Travaux
+            </th>
+
+            <th>
+              Entreprises
+            </th>
+
+            <th>
+              Risque
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          {
+            Object.keys(matrix)
+              .map(date => {
+
+                const list =
+                  matrix[date];
+
+                const entreprises =
+                  [
+                    ...new Set(
+                      list.map(
+                        x =>
+                        x.entreprise
+                      )
+                    )
+                  ];
+
+                const risk =
+                  calculateRisk(
+                    list.length,
+                    entreprises.length,
+                    Math.floor(
+                      list.length/2
+                    )
+                  );
+
+                return (
+
+                  <tr key={date}>
+
+                    <td>
+                      {date}
+                    </td>
+
+                    <td>
+                      {list.length}
+                    </td>
+
+                    <td>
+                      {
+                        entreprises.length
+                      }
+                    </td>
+
+                    <td>
+
+                      {
+                        risk === "ROUGE"
+                        &&
+                        "🔴"
+                      }
+
+                      {
+                        risk === "ORANGE"
+                        &&
+                        "🟠"
+                      }
+
+                      {
+                        risk === "VERT"
+                        &&
+                        "🟢"
+                      }
+
+                    </td>
+
+                  </tr>
+
+                );
+
+              })
+          }
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  );
+
+}

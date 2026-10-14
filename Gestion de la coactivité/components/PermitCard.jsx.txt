@@ -1,0 +1,51 @@
+export default function PermitCard({
+
+  permit
+
+}) {
+
+  return (
+
+    <div
+      className="
+      bg-white
+      rounded-xl
+      shadow
+      p-4"
+    >
+
+      <h3 className="font-bold">
+
+        Permis {permit.numero}
+
+      </h3>
+
+      <p>
+
+        Type :
+        {" "}
+        {permit.type}
+
+      </p>
+
+      <p>
+
+        Zone :
+        {" "}
+        {permit.zone}
+
+      </p>
+
+      <p>
+
+        Statut :
+        {" "}
+        {permit.statut}
+
+      </p>
+
+    </div>
+
+  );
+
+}

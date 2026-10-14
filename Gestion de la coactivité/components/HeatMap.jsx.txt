@@ -1,0 +1,56 @@
+export default function HeatMap({
+
+  stats
+
+}) {
+
+  return (
+
+    <div className="grid grid-cols-7 gap-2">
+
+      {
+
+        stats.map((jour) => (
+
+          <div
+            key={jour.date}
+            className={`
+            h-20
+            rounded
+
+            ${jour.risque === "VERT"
+              ? "bg-green-300"
+              : ""}
+
+            ${jour.risque === "ORANGE"
+              ? "bg-orange-400"
+              : ""}
+
+            ${jour.risque === "ROUGE"
+              ? "bg-red-500"
+              : ""}
+            `}
+          >
+
+            <div
+              className="
+              text-center
+              text-white
+              p-2"
+            >
+
+              {jour.date}
+
+            </div>
+
+          </div>
+
+        ))
+
+      }
+
+    </div>
+
+  );
+
+}

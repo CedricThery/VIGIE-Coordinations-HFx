@@ -1,0 +1,55 @@
+export default function GanttChart({
+
+  interventions
+
+}) {
+
+  return (
+
+    <div className="bg-white p-4">
+
+      <h2 className="font-bold mb-4">
+
+        Planning Gantt HF
+
+      </h2>
+
+      {
+
+        interventions.map(
+          (item) => (
+
+            <div
+              key={item.id}
+              className="mb-3"
+            >
+
+              <div>
+
+                {item.activite}
+
+              </div>
+
+              <div
+                className="
+                h-6
+                bg-blue-500
+                rounded"
+                style={{
+                  width:
+                  `${item.duree*20}px`
+                }}
+              />
+
+            </div>
+
+          )
+        )
+
+      }
+
+    </div>
+
+  );
+
+}

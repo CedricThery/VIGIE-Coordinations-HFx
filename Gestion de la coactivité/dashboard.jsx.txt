@@ -1,0 +1,47 @@
+import KPI from "../components/KPI";
+
+export default function Dashboard() {
+
+  return (
+
+    <div className="p-6">
+
+      <h1 className="text-3xl font-bold mb-6">
+
+        Gestion Co-activité HF
+
+      </h1>
+
+      <div className="grid grid-cols-4 gap-4">
+
+        <KPI
+          title="Travaux"
+          value="28"
+          color="blue"
+        />
+
+        <KPI
+          title="Entreprises"
+          value="14"
+          color="green"
+        />
+
+        <KPI
+          title="Zones Occupées"
+          value="7"
+          color="yellow"
+        />
+
+        <KPI
+          title="Conflits"
+          value="5"
+          color="red"
+        />
+
+      </div>
+
+    </div>
+
+  );
+
+}

@@ -1,0 +1,69 @@
+export function detectOverlaps(
+  interventions
+) {
+
+  const overlaps = [];
+
+  for (
+    let i = 0;
+    i < interventions.length;
+    i++
+  ) {
+
+    for (
+      let j = i + 1;
+      j < interventions.length;
+      j++
+    ) {
+
+      const a =
+        interventions[i];
+
+      const b =
+        interventions[j];
+
+      const sameZone =
+        a.zone === b.zone;
+
+      const overlapDate =
+
+        a.dateDebut <= b.dateFin &&
+        a.dateFin >= b.dateDebut;
+
+      if (
+        sameZone &&
+        overlapDate
+      ) {
+
+        overlaps.push({
+
+          zone: a.zone,
+
+          dateDebut:
+            a.dateDebut,
+
+          dateFin:
+            a.dateFin,
+
+          activiteA:
+            a.activite,
+
+          activiteB:
+            b.activite,
+
+          entrepriseA:
+            a.entreprise,
+
+          entrepriseB:
+            b.entreprise
+
+        });
+
+      }
+
+    }
+
+  }
+
+  return overlaps;
+}

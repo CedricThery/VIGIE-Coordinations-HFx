@@ -1,0 +1,40 @@
+export default function StatusControl() {
+
+  return (
+
+    <div
+      className="
+      flex
+      flex-wrap
+      gap-2"
+    >
+
+      <button>
+        🔥 Point chaud
+      </button>
+
+      <button>
+        ☁ Risque gaz
+      </button>
+
+      <button>
+        🚧 Échafaudage
+      </button>
+
+      <button>
+        🏗 Levage
+      </button>
+
+      <button>
+        ✅ Autorisé
+      </button>
+
+      <button>
+        ❌ Interdit
+      </button>
+
+    </div>
+
+  );
+
+}

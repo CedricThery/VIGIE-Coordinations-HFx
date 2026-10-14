@@ -1,0 +1,48 @@
+import { useState }
+from "react";
+
+export default function HFStatus() {
+
+  const [status,
+  setStatus] =
+    useState("MARCHE");
+
+  return (
+
+    <div>
+
+      <h2>
+
+        HF
+
+      </h2>
+
+      <button
+        onClick={() =>
+        setStatus("MARCHE")}
+      >
+
+        🟢 Marche
+
+      </button>
+
+      <button
+        onClick={() =>
+        setStatus("ARRET")}
+      >
+
+        🔴 Arrêt
+
+      </button>
+
+      <div>
+
+        {status}
+
+      </div>
+
+    </div>
+
+  );
+
+}

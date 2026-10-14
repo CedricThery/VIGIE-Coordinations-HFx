@@ -1,0 +1,61 @@
+import { importExcel } from "../services/excelService";
+
+export default function ImportExcel({
+
+  setInterventions
+
+}) {
+
+  const handleImport = async (e) => {
+
+    const data =
+      await importExcel(
+        e.target.files[0]
+      );
+
+    const enrichies =
+      data.map((row) => ({
+
+        revision:
+          row.Revision ||
+          row.REVISION,
+
+        zone:
+          row.Zone ||
+          row.ZONE,
+
+        entreprise:
+          row.Entreprise ||
+          row.ENTREPRISE,
+
+        activite:
+          row.Activite ||
+          row.ACTIVITE,
+
+        dateDebut:
+          new Date(
+            row.Debut
+          ),
+
+        dateFin:
+          new Date(
+            row.Fin
+          )
+
+      }));
+
+    setInterventions(enrichies);
+
+  };
+
+  return (
+
+    <input
+      type="file"
+      accept=".xlsx"
+      onChange={handleImport}
+      className="mb-4"
+    />
+
+  );
+}

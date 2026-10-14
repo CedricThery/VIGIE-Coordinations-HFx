@@ -1,0 +1,23 @@
+<ImportExcel
+  setInterventions={
+    setInterventions
+  }
+/>
+
+<AlertPanel
+  interventions={
+    interventions
+  }
+/>
+
+<DailyCoactivityTable
+  interventions={
+    interventions
+  }
+/>
+
+<OverlapTable
+  interventions={
+    interventions
+  }
+/>

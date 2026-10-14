@@ -1,0 +1,74 @@
+import ZoneCard from "./ZoneCard";
+
+export default function HFMap() {
+
+  const zones = [
+
+    {
+      id: 1,
+      nom: "Charbon",
+      secteur: "HF1"
+    },
+
+    {
+      id: 2,
+      nom: "Refroidissement",
+      secteur: "HF1"
+    },
+
+    {
+      id: 3,
+      nom: "Cowpers",
+      secteur: "COMMUN"
+    },
+
+    {
+      id: 4,
+      nom: "Chargement",
+      secteur: "HF1"
+    },
+
+    {
+      id: 5,
+      nom: "Gueulard",
+      secteur: "HF2"
+    },
+
+    {
+      id: 6,
+      nom: "Coulée",
+      secteur: "HF2"
+    },
+
+    {
+      id: 7,
+      nom: "Épuration",
+      secteur: "COMMUN"
+    }
+
+  ];
+
+  return (
+
+    <div
+      className="
+      grid
+      lg:grid-cols-3
+      md:grid-cols-2
+      gap-4"
+    >
+
+      {zones.map(zone => (
+
+        <ZoneCard
+          key={zone.id}
+          zone={zone}
+        />
+
+      ))}
+
+    </div>
+
+  );
+
+}

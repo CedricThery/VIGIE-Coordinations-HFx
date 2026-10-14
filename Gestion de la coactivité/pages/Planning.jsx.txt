@@ -1,0 +1,63 @@
+import {
+  useState
+} from "react";
+
+import HeatMap
+from "../components/HeatMap";
+
+export default function Planning() {
+
+  const [stats] =
+    useState([
+
+      {
+        date: "19/10",
+        risque: "ROUGE"
+      },
+
+      {
+        date: "20/10",
+        risque: "ROUGE"
+      },
+
+      {
+        date: "21/10",
+        risque: "ROUGE"
+      },
+
+      {
+        date: "22/10",
+        risque: "ORANGE"
+      },
+
+      {
+        date: "23/10",
+        risque: "VERT"
+      }
+
+    ]);
+
+  return (
+
+    <div className="p-6">
+
+      <h1
+        className="
+        text-2xl
+        font-bold
+        mb-4"
+      >
+
+        Heatmap Coactivité
+
+      </h1>
+
+      <HeatMap
+        stats={stats}
+      />
+
+    </div>
+
+  );
+
+}

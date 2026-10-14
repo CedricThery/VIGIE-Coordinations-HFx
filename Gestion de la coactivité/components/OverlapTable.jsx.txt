@@ -1,0 +1,81 @@
+import { detectOverlaps }
+from "../services/overlapEngine";
+
+export default function OverlapTable({
+
+  interventions
+
+}) {
+
+  const overlaps =
+    detectOverlaps(interventions);
+
+  return (
+
+    <div className="bg-white rounded-xl p-4 shadow">
+
+      <h2 className="font-bold text-xl mb-4">
+        Chevauchements détectés
+      </h2>
+
+      <table className="w-full">
+
+        <thead>
+
+          <tr>
+
+            <th>Zone</th>
+
+            <th>Entreprise 1</th>
+
+            <th>Entreprise 2</th>
+
+            <th>Activité 1</th>
+
+            <th>Activité 2</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          {
+            overlaps.map(
+              (o, index) => (
+
+                <tr key={index}>
+
+                  <td>{o.zone}</td>
+
+                  <td>
+                    {o.entrepriseA}
+                  </td>
+
+                  <td>
+                    {o.entrepriseB}
+                  </td>
+
+                  <td>
+                    {o.activiteA}
+                  </td>
+
+                  <td>
+                    {o.activiteB}
+                  </td>
+
+                </tr>
+
+              )
+            )
+          }
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  );
+
+}

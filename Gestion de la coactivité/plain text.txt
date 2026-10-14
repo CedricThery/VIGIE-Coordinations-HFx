@@ -1,0 +1,29 @@
+src
+│
+├── components
+│   ├── Header.jsx
+│   ├── Sidebar.jsx
+│   ├── KPI.jsx
+│   ├── OverlapTable.jsx
+│   ├── ZoneCard.jsx
+│   ├── AlertPanel.jsx
+│   └── ImportExcel.jsx
+│
+├── pages
+│   ├── Dashboard.jsx
+│   ├── CartographieHF.jsx
+│   ├── Planning.jsx
+│   ├── Entreprises.jsx
+│   └── Alertes.jsx
+│
+├── services
+│   ├── excelService.js
+│   ├── overlapEngine.js
+│   ├── riskEngine.js
+│   └── pdfService.js
+│
+├── firebase
+│   └── firebase.js
+│
+├── App.jsx
+└── main.jsx

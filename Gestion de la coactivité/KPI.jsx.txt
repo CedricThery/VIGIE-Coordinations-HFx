@@ -1,0 +1,25 @@
+export default function KPI({
+  title,
+  value,
+  color
+}) {
+
+  return (
+
+    <div
+      className={`rounded-xl p-4 shadow bg-${color}-100`}
+    >
+
+      <div className="text-sm">
+        {title}
+      </div>
+
+      <div className="text-3xl font-bold">
+        {value}
+      </div>
+
+    </div>
+
+  );
+
+}

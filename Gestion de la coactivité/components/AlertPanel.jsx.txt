@@ -1,0 +1,68 @@
+import {
+  detectOverlaps
+}
+from "../services/overlapEngine";
+
+export default function AlertPanel({
+
+  interventions
+
+}) {
+
+  const overlaps =
+    detectOverlaps(
+      interventions
+    );
+
+  return (
+
+    <div className="bg-red-50 p-4 rounded-xl">
+
+      <h2 className="font-bold">
+
+        Alertes coactivité
+
+      </h2>
+
+      {
+
+        overlaps.map(
+          (alert, idx) => (
+
+            <div
+              key={idx}
+              className="
+              mt-2
+              bg-red-100
+              p-2
+              rounded"
+            >
+
+              ⚠ Zone
+              {" "}
+              {alert.zone}
+
+              {" - "}
+
+              {
+                alert.entrepriseA
+              }
+
+              {" / "}
+
+              {
+                alert.entrepriseB
+              }
+
+            </div>
+
+          )
+        )
+
+      }
+
+    </div>
+
+  );
+
+}

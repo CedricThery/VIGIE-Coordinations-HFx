@@ -1,0 +1,38 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Dashboard from "./pages/Dashboard";
+import CartographieHF from "./pages/CartographieHF";
+import Planning from "./pages/Planning";
+import Alertes from "./pages/Alertes";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+
+      <Routes>
+
+        <Route
+          path="/"
+          element={<Dashboard />}
+        />
+
+        <Route
+          path="/planning"
+          element={<Planning />}
+        />
+
+        <Route
+          path="/cartographie"
+          element={<CartographieHF />}
+        />
+
+        <Route
+          path="/alertes"
+          element={<Alertes />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
+  );
+}
